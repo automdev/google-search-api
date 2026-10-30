@@ -40,7 +40,7 @@ public class GoogleSearchExample {
     }
 
     public static void main(String[] args) throws Exception {
-        String query = "query=" + enc("YOUR_VALUE");
+        String query = "query=" + enc("Airbus Company");
         HttpResponse<byte[]> response = call("GET", "https://api.autom.dev/v1/google/search" + (query.isEmpty() ? "" : "?" + query), null);
         String text = new String(response.body(), StandardCharsets.UTF_8);
         System.out.println(text.length() > 2000 ? text.substring(0, 2000) : text);

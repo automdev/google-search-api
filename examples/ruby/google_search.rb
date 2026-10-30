@@ -19,7 +19,7 @@ def call(method, url, body = nil)
 end
 
 uri = URI("https://api.autom.dev/v1/google/search")
-uri.query = URI.encode_www_form('query' => 'YOUR_VALUE')
+uri.query = URI.encode_www_form('query' => 'Airbus Company')
 response = call("GET", uri.to_s)
 
 puts JSON.pretty_generate(JSON.parse(response))

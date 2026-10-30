@@ -7,7 +7,7 @@ var apiKey = Environment.GetEnvironmentVariable("AUTOM_API_KEY") ?? throw new In
 using var http = new HttpClient { Timeout = TimeSpan.FromSeconds(120) };
 http.DefaultRequestHeaders.Add("x-api-key", apiKey);
 
-var query = "query=" + Uri.EscapeDataString("YOUR_VALUE");
+var query = "query=" + Uri.EscapeDataString("new york");
 var response = await http.GetAsync("https://api.autom.dev/v1/google/search/light" + (query.Length > 0 ? "?" + query : ""));
 if (!response.IsSuccessStatusCode)
 {

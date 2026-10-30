@@ -5,4 +5,4 @@ set -euo pipefail
 
 curl -sS -G "https://api.autom.dev/v1/google/search/light" \
   -H "x-api-key: ${AUTOM_API_KEY}" \
-  --data-urlencode query=YOUR_VALUE
+  --data-urlencode 'query=new york'
