@@ -58,8 +58,11 @@ Scrape Google Search results via API and retrieve structured SERP data with pagi
 | `safe` | query | string | — | Adult content filter. `active` enables Google SafeSearch; `off` disables it. Omit to use Google default. |
 | `location` | query | string | — | Human-readable location to originate the search from (e.g. `New York, NY`, `Paris, France`). If several locations match, the most popular one is used. Note: `location` and `uule` cannot be used together. |
 | `uule` | query | string | — | Google encoded location parameter. Use for precise geo targeting. Note: `uule` and `location` cannot be used together. |
-| `gl` | query | string | — | Country to use for the Google search (two-letter country code, e.g. `us`, `fr`). |
-| `hl` | query | string | — | Language to use for the Google search (two-letter language code, e.g. `en`, `fr`). |
+| `google_domain` | query | string | — | Google domain to use for the search. Defaults to `google.com`. |
+| `gl` | query | string | — | Country to use for the Google search. Two-letter country code (e.g. `us` for the United States, `uk` for United Kingdom, or `fr` for France). |
+| `hl` | query | string | — | Language to use for the Google search. Two or three-letter language code (e.g. `en`, `es`, `fr`), optionally followed by a region code (e.g. `en-gb`, `es-419`). |
+| `cr` | query | string | — | Limit results to one or more countries. Use `country{XX}` with `\|` as delimiter (e.g. `countryFR\|countryDE`). |
+| `lr` | query | string | — | Limit results to one or more languages. Use `lang_{xx}` with `\|` as delimiter (e.g. `lang_fr\|lang_de`). |
 | `page` | query | number | — | Page number / offset used for pagination. |
 | `num` | query | number | — | Maximum number of results to return per page (deprecated). |
 
@@ -210,8 +213,11 @@ Scrape lightweight Google Search results via API: fast, cost-efficient, organic 
 | Parameter | In | Type | Required | Description |
 |---|---|---|---|---|
 | `query` | query | string | ✅ | The search query you want to run on Google (supports advanced operators like `site:`, `inurl:`, `intitle:`). |
-| `gl` | query | string | — | Country to use for the Google search (two-letter country code, e.g. `us`, `fr`). |
-| `hl` | query | string | — | Language to use for the Google search (two-letter language code, e.g. `en`, `fr`). |
+| `google_domain` | query | string | — | Google domain to use for the search. Defaults to `google.com`. |
+| `gl` | query | string | — | Country to use for the Google search. Two-letter country code (e.g. `us` for the United States, `uk` for United Kingdom, or `fr` for France). |
+| `hl` | query | string | — | Language to use for the Google search. Two or three-letter language code (e.g. `en`, `es`, `fr`), optionally followed by a region code (e.g. `en-gb`, `es-419`). |
+| `cr` | query | string | — | Limit results to one or more countries. Use `country{XX}` with `\|` as delimiter (e.g. `countryFR\|countryDE`). |
+| `lr` | query | string | — | Limit results to one or more languages. Use `lang_{xx}` with `\|` as delimiter (e.g. `lang_fr\|lang_de`). |
 
 ### Python example
 
